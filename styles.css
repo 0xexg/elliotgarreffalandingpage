@@ -1,0 +1,265 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    background-color: #0a0a0a;
+    color: #e4e4e7;
+    line-height: 1.6;
+    font-size: 16px;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Profile Section */
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.avatar {
+    flex-shrink: 0;
+}
+
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #27272a;
+}
+
+.profile-info {
+    flex-grow: 1;
+}
+
+.name {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.25rem;
+}
+
+.title {
+    font-size: 1rem;
+    color: #a1a1aa;
+    font-weight: 400;
+}
+
+.social-icons {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.social-icon {
+    display: inline-block;
+    font-size: 1.2rem;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.social-icon:hover {
+    opacity: 1;
+}
+
+/* Summary */
+.summary {
+    font-size: 1rem;
+    color: #a1a1aa;
+    margin-bottom: 3rem;
+    line-height: 1.7;
+}
+
+/* Sections */
+section {
+    margin-bottom: 3rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+/* What I do section */
+.what-i-do ul {
+    list-style: none;
+    padding: 0;
+}
+
+.what-i-do li {
+    color: #a1a1aa;
+    margin-bottom: 0.8rem;
+    padding-left: 1rem;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+.what-i-do li::before {
+    content: "•";
+    color: #71717a;
+    position: absolute;
+    left: 0;
+}
+
+/* Services section */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.service-card {
+    background-color: #111111;
+    border: 1px solid #27272a;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.2s ease;
+}
+
+.service-card:hover {
+    border-color: #3f3f46;
+    background-color: #171717;
+}
+
+.service-card:last-child {
+    grid-column: 1 / -1;
+}
+
+.service-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.service-card h3 {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.service-card p {
+    color: #a1a1aa;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Companies banner */
+.companies-banner {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #27272a;
+}
+
+.companies-banner h2 {
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
+
+.company-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    opacity: 0.6;
+}
+
+.company-logo {
+    color: #71717a;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    transition: opacity 0.2s ease;
+}
+
+.company-logo:hover {
+    opacity: 1;
+    color: #a1a1aa;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 1.5rem 1rem;
+    }
+    
+    .profile-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .profile-info {
+        order: 2;
+    }
+    
+    .social-icons {
+        order: 3;
+        justify-content: center;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .service-card:last-child {
+        grid-column: 1;
+    }
+    
+    .company-logos {
+        gap: 1.5rem;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .name {
+        font-size: 1.5rem;
+    }
+    
+    .summary {
+        font-size: 0.95rem;
+    }
+    
+    .service-card {
+        padding: 1.2rem;
+    }
+    
+    .company-logos {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Animation for service cards */
+.service-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
