@@ -156,6 +156,15 @@ h2 {
     line-height: 1.5;
 }
 
+.service-link {
+    text-decoration: none;
+    display: block;
+}
+
+.service-link:hover {
+    transform: translateY(-2px);
+}
+
 /* Companies banner */
 .companies-banner {
     text-align: center;
